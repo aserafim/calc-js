@@ -1,23 +1,9 @@
-let resultado = document.getElementById("calculator__output");
+document.querySelectorAll('.calculator__key').forEach(button => {
+  button.addEventListener('click', function(){
+    const outPutDOM = document.querySelector('.calculator__output');
+    const buttonValue = button.innerText;
+    outPutDOM.innerText += buttonValue;
 
-function adicionar(valor) {
-  resultado.value += valor;
-}
-
-function limpar() {
-  resultado.value = 0;
-}
-
-function apagar() {
-  resultado.value = resultado.value.slice(0, -1);
-}
-
-function calcular() {
-  resultado.value = eval(resultado.value);
-}
-
-function insertValue(value) {
-    resultado.value += value;
-}
-
-resultado.value = 10
+  });
+  
+});

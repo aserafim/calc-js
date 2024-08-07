@@ -19,20 +19,25 @@ function resultado(){
   const outPutDOM = document.querySelector('.calculator__output');
   const expressao = outPutDOM.innerText;
   
-  const regex = /\d+/
-  const regexOperation = /[+\-x\/|]/
-  
-  const operandoUm = expressao.match(regex)
-  const operacao = expressao.match(regexOperation)
-  const indice = expressao.indexOf(operacao)
-  const operandoDois = expressao.slice(indice).match(regex)
-  
-  
+  const regex = /\d+/g;
+  const regexOperation = /[+\-x\/|]/;
 
+  const operandos = expressao.match(regex);
+  const operacao = expressao.match(regexOperation)[0]
+  
+  const operandoUm = parseFloat(operandos[0]);
+  const operandoDois = parseFloat(operandos[1]);
 
-  alert(operandoDois)
-  const opDois = 0
-
+  if(operacao == '/') {
+    resultado = operandoUm / operandoDois;
+  } else if(operacao == 'x'){
+    resultado = operandoUm * operandoDois;
+  } else if(operacao == '+'){
+    resultado = operandoUm + operandoDois;
+  } else if(operacao == '-'){
+    resultado = operandoUm - operandoDois;
+  }
+  
   
 
 }

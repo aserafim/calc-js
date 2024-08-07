@@ -16,7 +16,13 @@ function limpar(){
 }
 
 function resultado(){
-  const operacao = document.querySelector('.calculator__output');
-  
+  const outPutDOM = document.querySelector('.calculator__output');
+  const operacao = outPutDOM.innerText;
+  const regex = /\d+/
+  const opUm = operacao.match(regex)
+
+  alert(opUm)
+
+  const opDois = str(operacao)
 
 }

@@ -38,6 +38,6 @@ function resultado(){
     resultado = operandoUm - operandoDois;
   }
   
-  
+  outPutDOM.innerText = resultado;
 
 }

@@ -17,14 +17,20 @@ function limpar(){
 
 function resultado(){
   const outPutDOM = document.querySelector('.calculator__output');
-  const opString = outPutDOM.innerText;
+  const expressao = outPutDOM.innerText;
+  
   const regex = /\d+/
   const regexOperation = /[+\-x\/|]/
-  const opUm = opString.match(regex)
-  const operacao = opString.match(regexOperation)
-  indice = opString.indexOf(operacao)
+  
+  const operandoUm = expressao.match(regex)
+  const operacao = expressao.match(regexOperation)
+  const indice = expressao.indexOf(operacao)
+  const operandoDois = expressao.slice(indice).match(regex)
+  
+  
 
-  alert(indice)
+
+  alert(operandoDois)
   const opDois = 0
 
   
